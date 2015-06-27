@@ -3,7 +3,7 @@ using System;
 
 namespace netPatterns
 {
-	public class AbstractFactoryRunner
+	public class FactoryRunner
 	{
 		
 		public void Run(FactoryType type)

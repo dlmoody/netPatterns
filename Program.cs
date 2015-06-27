@@ -7,7 +7,7 @@ namespace netPatterns
         public static void Main(string[] args)
         {
             Console.WriteLine("Running the Abstract Factory for a Car");
-            var runner = new AbstractFactoryRunner();
+            var runner = new FactoryRunner();
             runner.Run(FactoryType.Car);
             
             Console.WriteLine("Running the Abstract Factory for a Van");
