@@ -9,7 +9,8 @@ namespace netPatterns
 		[Fact]
 		public void ItWorks()
 		{
-			var yes = true;
+			Assert.Equal(1, 2);
+			
 			
 		}
 		
