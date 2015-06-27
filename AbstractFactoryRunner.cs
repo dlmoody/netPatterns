@@ -1,4 +1,6 @@
 
+using System;
+
 namespace netPatterns
 {
 	public class AbstractFactoryRunner
@@ -12,10 +14,12 @@ namespace netPatterns
 			IChassis chassis = factory.CreateChassis();
 			IGlassware glass = factory.CreateGlassware();
 			
-			System.Console.WriteLine("body parts created: " + body.BodyParts);
-			System.Console.WriteLine("chassis parts created: " + chassis.ChassisParts);
-			System.Console.WriteLine("glassware parts created: " + glass.GlasswareParts);
-			System.Console.Read();
+			Console.WriteLine("-----------------------------");
+			Console.WriteLine("body parts created: " + body.BodyParts);
+			Console.WriteLine("chassis parts created: " + chassis.ChassisParts);
+			Console.WriteLine("glassware parts created: " + glass.GlasswareParts);
+			Console.WriteLine("-----------------------------");
+			
 			
 		}
 		private AbstractPartFactory GetFactory(FactoryType type)

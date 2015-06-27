@@ -6,11 +6,15 @@ namespace netPatterns
 {
 	public class TestStuff
 	{
+		
 		[Fact]
-		public void ItWorks()
+		public void CarPartsFactoryCreatesCarBodyParts()
 		{
-			Assert.Equal(1, 2);
+			var factory = new CarPartsFactory();
 			
+			var bodyPart = factory.CreateBody();
+			
+			Assert.IsType(typeof(CarBody), bodyPart);
 			
 		}
 		

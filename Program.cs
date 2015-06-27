@@ -6,7 +6,14 @@ namespace netPatterns
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Running the Abstract Factory for a Car");
+            var runner = new AbstractFactoryRunner();
+            runner.Run(FactoryType.Car);
+            
+            Console.WriteLine("Running the Abstract Factory for a Van");
+            runner.Run(FactoryType.Van);
+            
+            Console.WriteLine("press any key to exit..... ");
             Console.ReadLine();
         }
     }
