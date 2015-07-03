@@ -13,6 +13,10 @@ namespace netPatterns
             Console.WriteLine("Running the Abstract Factory for a Van");
             runner.Run(FactoryType.Van);
             
+            Console.WriteLine("Running Car builder");
+            var builderRunner = new BuilderRunner();
+            builderRunner.Run();
+            
             Console.WriteLine("press any key to exit..... ");
             Console.ReadLine();
         }

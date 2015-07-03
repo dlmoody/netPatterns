@@ -17,7 +17,7 @@ namespace netPatterns
 		{
 			get
 			{
-				return null;
+				return carInProgress;
 			}
 		}
 		public override void BuildBody()
