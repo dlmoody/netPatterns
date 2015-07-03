@@ -3,7 +3,7 @@
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
 else
-    if [ -z $XDG_DATA_HOME ]; then
+  if [ -z $XDG_DATA_HOME ]; then
         cachedir=$HOME/.local/share
     else
         cachedir=$XDG_DATA_HOME;
@@ -27,10 +27,17 @@ if test ! -d packages/KoreBuild; then
     mono .nuget/nuget.exe install Sake -version 0.2 -o packages -ExcludeVersion
 fi
 
-if ! type dnvm > /dev/null 2>&1; then
-    source packages/KoreBuild/build/dnvm.sh
-fi
+if [ "$1" != "rebuild-package" ]; then
 
-if ! type dnx > /dev/null 2>&1; then
-    dnvm upgrade
-fi
+    if ! type dnvm > /dev/null 2>&1; then
+        source packages/KoreBuild/build/dnvm.sh
+    fi
+
+    if ! type dnx > /dev/null 2>&1; then
+      dnvm upgrade
+    fi
+
+    mono packages/Sake/tools/Sake.exe -I packages/KoreBuild/build -f makefile.shade "$@"
+else
+    mono packages/Sake/tools/Sake.exe -I packages/KoreBuild/build -f makefile.shade "$@"
+fi    
