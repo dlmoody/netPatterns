@@ -2,6 +2,23 @@ language: csharp
 sudo: false
 before_install:
   - chmod a+x ./build.sh
+
+
+  - apt-get install automake libtool curl
+  - curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | tar zxfv - -C /usr/local/src
+  - cd /usr/local/src/libuv-1.4.2
+  - sh autogen.sha
+  - ./configure
+  - make
+  - make install
+  - rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
+  - ldconfig
+
+  - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.s
+  - source /home/parallels/.dnx/dnvm/dnvm.sh
+  - dnvm
+  - dnvm upgrade
+  
 script:
   - ./build.sh --quiet verify
   
