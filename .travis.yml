@@ -1,3 +1,5 @@
 language: csharp
 sudo: false
-solution: netPatterns.csproj
+install:
+	- dnu restore
+	- dnu build
