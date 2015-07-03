@@ -1,5 +1,6 @@
 language: csharp
 sudo: false
-install:
-	- dnu restore
-	- dnu build
+mono:
+  - alpha
+script:
+  - ./build.sh --quiet verify
