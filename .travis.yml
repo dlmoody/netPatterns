@@ -2,7 +2,6 @@ language: csharp
 sudo: true
 before_install:
   - chmod a+x ./build.sh
-  
 script:
   - ./build.sh --quiet verify
   
