@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+
 
 namespace netPatterns
 {
@@ -16,6 +18,11 @@ namespace netPatterns
             Console.WriteLine("Running Car builder");
             var builderRunner = new BuilderRunner();
             builderRunner.Run();
+            
+            using(TextWriter writer = File.CreateText("netPatterns.Log.txt")){
+                Console.WriteLine("Writing");
+                writer.WriteLine("Writing to the log");
+            }
             
             Console.WriteLine("press any key to exit..... ");
             Console.ReadLine();
