@@ -1,9 +1,9 @@
 language: csharp
-sudo: false
+sudo: true
 before_install:
   - chmod a+x ./build.sh
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.s
-  - source /home/parallels/.dnx/dnvm/dnvm.sh
+  - source /home/travis/.dnx/dnvm/dnvm.sh
   - dnvm
   - dnvm upgrade
   
