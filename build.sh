@@ -20,6 +20,7 @@ fi
 if test ! -e .nuget; then
     mkdir .nuget
     cp $cachedir/nuget.exe .nuget/nuget.exe
+    #cp $cachedir/nuget.config .nuget/nuget.config
 fi
 
 if test ! -d packages/KoreBuild; then
