@@ -19,6 +19,7 @@ namespace netPatterns
             var builderRunner = new BuilderRunner();
             builderRunner.Run();
             
+            
             using(TextWriter writer = File.CreateText("netPatterns.Log.txt")){
                 Console.WriteLine("Writing");
                 writer.WriteLine("Writing to the log");
